@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from "../../components/NavBar";
+import LandingNavBar from "../../components/LandingNavBar";
+import FloatingButton from "../../components/FloatingButton";
 import ThemeRegistry from "./ThemeRegistry";
 import { config } from "../utils/config";
 import { defaultLocale, getMessages } from "../i18n";
@@ -59,10 +60,11 @@ export default async function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
         <ThemeRegistry>
           <LanguageProvider initialLocale={defaultLocale} initialMessages={initialMessages}>
-            <NavBar />
+            <LandingNavBar />
             <div style={{ width: "100%", margin: "0 auto" }}>
               {children}
             </div>
+            <FloatingButton />
           </LanguageProvider>
         </ThemeRegistry>
       </body>

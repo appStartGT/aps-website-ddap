@@ -1,13 +1,14 @@
 {
   "NavBar": {
     "home": "Inicio",
-    "aboutUs": "Nosotros",
+    "aboutUs": "Sobre Nosotros",
     "services": "Servicios",
     "projects": "Proyectos",
     "blog": "Blog",
     "contact": "Contacto",
-    "getQuote": "Cotización Gratis",
-    "getFreeQuote": "Cotización Gratis"
+    "getQuote": "Obtener Presupuesto",
+    "getFreeQuote": "Cotización Gratis",
+    "tagline": "Calidad y Excelencia en Cada Proyecto"
   },
   "Hero": {
     "title1": "Drywall de Alta Calidad",
@@ -15,7 +16,8 @@
     "title3": "Pintura Para Cada Proyecto",
     "subtitle": "Creando acabados elegantes y espacios vibrantes con artesanía y precisión experta",
     "callButton": "Llámanos",
-    "emailButton": "Envíanos un Email"
+    "emailButton": "Envíanos un Email",
+    "whatsappButton": "WhatsApp"
   },
   "Quality": {
     "unmatched": "Calidad",

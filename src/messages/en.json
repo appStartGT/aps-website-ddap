@@ -6,8 +6,9 @@
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact",
-    "getQuote": "Get a Free Quote",
-    "getFreeQuote": "Get a Free Quote"
+    "getQuote": "Get a Quote",
+    "getFreeQuote": "Get a Free Quote",
+    "tagline": "Quality & Excellence in Every Project"
   },
   "Hero": {
     "title1": "Top-Quality Drywall",
@@ -15,7 +16,8 @@
     "title3": "Painting For Every Project",
     "subtitle": "Creating elegant finishes and vibrant spaces with expert craftsmanship & precision",
     "callButton": "Call Us",
-    "emailButton": "Email Us"
+    "emailButton": "Email Us",
+    "whatsappButton": "WhatsApp"
   },
   "Quality": {
     "unmatched": "Unmatched",
