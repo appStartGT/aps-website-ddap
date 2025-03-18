@@ -1,0 +1,68 @@
+{
+  "NavBar": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "getQuote": "Get a Free Quote",
+    "getFreeQuote": "Get a Free Quote"
+  },
+  "Hero": {
+    "title1": "Top-Quality Drywall",
+    "title2": "And",
+    "title3": "Painting For Every Project",
+    "subtitle": "Creating elegant finishes and vibrant spaces with expert craftsmanship & precision",
+    "callButton": "Call Us",
+    "emailButton": "Email Us"
+  },
+  "Quality": {
+    "unmatched": "Unmatched",
+    "quality": "Quality",
+    "paragraph1": "At Dany's Drywall and Painting, quality is at the core of everything we do. Our team is committed to delivering flawless craftsmanship on every project, whether it's a simple repair or a complete drywall installation for new construction. We use only the highest-quality materials and employ the latest techniques to ensure that your walls are strong, smooth, and built to last.",
+    "paragraph2": "From precise drywall finishing to expert-level painting, we guarantee results that exceed expectations and stand the test of time. With our meticulous attention to detail, your satisfaction is always assured."
+  },
+  "Services": {
+    "title1": "These are",
+    "title2": "Our Services",
+    "service1": {
+      "title": "Drywall Installation & Repair",
+      "description": "From new construction to renovations, Dany's Drywall and Painting offers expert drywall installation and repair services. Our skilled professionals handle every aspect of drywall work, including framing, hanging, taping, and finishing. We ensure that your walls are sturdy, smooth, and ready for the perfect finish."
+    },
+    "service2": {
+      "title": "Professional Painting",
+      "description": "Our professional painting services bring your spaces to life with vibrant colors and smooth finishes. At Dany's Drywall and Painting, we understand the importance of precision and care in every brushstroke. We use only top-quality paints and materials to ensure lasting results."
+    },
+    "service3": {
+      "title": "Repair and Maintenance",
+      "description": "At Dany's Drywall and Painting, we specialize in comprehensive drywall and painting repair and maintenance services. From fixing small cracks and holes to addressing water damage, our skilled team can restore your walls to their original beauty."
+    }
+  },
+  "Projects": {
+    "title": "Projects and work"
+  },
+  "Gallery": {
+    "title": "Our Work",
+    "subtitle": "Browse through our gallery of completed projects to see the quality of our work. Click on any image to view it in more detail."
+  },
+  "Contact": {
+    "title": "Contact us",
+    "getInTouch": "Get in Touch",
+    "schedule": "Schedule a free estimate or ask us about our services.",
+    "sendMessage": "Send us a Message",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "Footer": {
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "rights": "All Rights Reserved"
+  }
+} 

@@ -1,0 +1,68 @@
+{
+  "NavBar": {
+    "home": "Inicio",
+    "aboutUs": "Nosotros",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "getQuote": "Cotización Gratis",
+    "getFreeQuote": "Cotización Gratis"
+  },
+  "Hero": {
+    "title1": "Drywall de Alta Calidad",
+    "title2": "Y",
+    "title3": "Pintura Para Cada Proyecto",
+    "subtitle": "Creando acabados elegantes y espacios vibrantes con artesanía y precisión experta",
+    "callButton": "Llámanos",
+    "emailButton": "Envíanos un Email"
+  },
+  "Quality": {
+    "unmatched": "Calidad",
+    "quality": "Inigualable",
+    "paragraph1": "En Dany's Drywall and Painting, la calidad es el núcleo de todo lo que hacemos. Nuestro equipo está comprometido a ofrecer una artesanía impecable en cada proyecto, ya sea una simple reparación o una instalación completa de drywall para nueva construcción. Utilizamos solo materiales de la más alta calidad y empleamos las técnicas más avanzadas para garantizar que sus paredes sean resistentes, lisas y duraderas.",
+    "paragraph2": "Desde el acabado preciso del drywall hasta la pintura de nivel experto, garantizamos resultados que superan las expectativas y resisten la prueba del tiempo. Con nuestra meticulosa atención al detalle, su satisfacción está siempre asegurada."
+  },
+  "Services": {
+    "title1": "Estos son",
+    "title2": "Nuestros Servicios",
+    "service1": {
+      "title": "Instalación y Reparación de Drywall",
+      "description": "Desde nuevas construcciones hasta renovaciones, Dany's Drywall and Painting ofrece servicios expertos de instalación y reparación de drywall. Nuestros profesionales manejan todos los aspectos del trabajo de drywall, incluyendo estructuración, colgado, encintado y acabado. Nos aseguramos de que sus paredes sean resistentes, lisas y estén listas para el acabado perfecto."
+    },
+    "service2": {
+      "title": "Pintura Profesional",
+      "description": "Nuestros servicios de pintura profesional dan vida a sus espacios con colores vibrantes y acabados suaves. En Dany's Drywall and Painting, entendemos la importancia de la precisión y el cuidado en cada pincelada. Utilizamos solo pinturas y materiales de primera calidad para garantizar resultados duraderos."
+    },
+    "service3": {
+      "title": "Reparación y Mantenimiento",
+      "description": "En Dany's Drywall and Painting, nos especializamos en servicios integrales de reparación y mantenimiento de drywall y pintura. Desde arreglar pequeñas grietas y agujeros hasta solucionar daños por agua, nuestro equipo experimentado puede restaurar sus paredes a su belleza original."
+    }
+  },
+  "Projects": {
+    "title": "Proyectos y Trabajos"
+  },
+  "Gallery": {
+    "title": "Nuestro Trabajo",
+    "subtitle": "Explore nuestra galería de proyectos completados para ver la calidad de nuestro trabajo. Haga clic en cualquier imagen para verla con más detalle."
+  },
+  "Contact": {
+    "title": "Contáctenos",
+    "getInTouch": "Póngase en Contacto",
+    "schedule": "Programe un presupuesto gratuito o pregúntenos sobre nuestros servicios.",
+    "sendMessage": "Envíenos un Mensaje",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    }
+  },
+  "Footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "contactInfo": "Información de Contacto",
+    "rights": "Todos los Derechos Reservados"
+  }
+} 
