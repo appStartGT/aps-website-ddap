@@ -9,8 +9,12 @@
 export const config = {
   contact: {
     phone: process.env.NEXT_PUBLIC_COMPANY_PHONE || "(123) 456-7890",
-    email: process.env.NEXT_PUBLIC_COMPANY_EMAIL || "contact@danysdrywallandpainting.com",
-    address: process.env.NEXT_PUBLIC_COMPANY_ADDRESS || "123 Main Street, City, State 12345",
+    email:
+      process.env.NEXT_PUBLIC_COMPANY_EMAIL ||
+      "contact@danysdrywallandpainting.com",
+    address:
+      process.env.NEXT_PUBLIC_COMPANY_ADDRESS ||
+      "123 Main Street, City, State 12345",
   },
   social: {
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://facebook.com",
@@ -20,4 +24,4 @@ export const config = {
   company: {
     name: process.env.NEXT_PUBLIC_COMPANY_NAME || "Dany's Drywall and Painting",
   },
-}; 
+};

@@ -19,6 +19,10 @@
     "emailButton": "Email Us",
     "whatsappButton": "WhatsApp"
   },
+  "Common": {
+    "getAQuote": "Get a Quote",
+    "or": "or"
+  },
   "Quality": {
     "unmatched": "Unmatched",
     "quality": "Quality",
@@ -53,6 +57,7 @@
     "getInTouch": "Get in Touch",
     "schedule": "Schedule a free estimate or ask us about our services.",
     "sendMessage": "Send us a Message",
+    "getAQuote": "Get a Free Quote",
     "form": {
       "firstName": "First Name",
       "lastName": "Last Name",

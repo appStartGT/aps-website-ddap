@@ -18,6 +18,7 @@ import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 import Image from "next/image";
 import { config } from "../src/utils/config";
 import { useLanguage } from "../src/contexts/LanguageContext";
+import GetQuoteButton from "./GetQuoteButton";
 
 export default function HeroSection() {
   const theme = useTheme();
@@ -141,13 +142,11 @@ export default function HeroSection() {
             <Grid container spacing={2} sx={{ py: 2 }}>
               {/* Primary CTA - Get a Quote */}
               <Grid item xs={12}>
-                <Button
-                  variant="contained"
+                <GetQuoteButton
                   size="large"
                   fullWidth
                   startIcon={<RequestQuoteIcon />}
                   sx={{
-                    bgcolor: "#ff3333",
                     py: 1.5,
                     fontSize: { xs: "0.95rem", sm: "1.1rem" },
                     borderRadius: 2,
@@ -156,12 +155,9 @@ export default function HeroSection() {
                     "&:hover": {
                       transform: "translateY(-2px)",
                       boxShadow: "0 6px 15px rgba(255,51,51,0.3)",
-                      bgcolor: "#e62e2e",
                     },
                   }}
-                >
-                  {t("NavBar.getQuote")}
-                </Button>
+                />
               </Grid>
 
               {/* Secondary actions - Contact methods */}
@@ -205,7 +201,7 @@ export default function HeroSection() {
                   <Button
                     variant="outlined"
                     startIcon={<WhatsAppIcon />}
-                    href={`https://wa.me/${whatsappNumber}`}
+                    href={`whatsapp://send?phone=${whatsappNumber}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{

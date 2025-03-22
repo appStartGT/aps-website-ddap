@@ -7,6 +7,8 @@ import ThemeRegistry from "./ThemeRegistry";
 import { config } from "../utils/config";
 import { defaultLocale, getMessages } from "../i18n";
 import { LanguageProvider } from "../contexts/LanguageContext";
+import { ContactModalProvider } from "../contexts/ContactModalContext";
+import ContactModal from "../../components/ContactModal";
 // Add this import
 // import '@fontsource/roboto/300.css';
 // import '@fontsource/roboto/400.css';
@@ -60,11 +62,14 @@ export default async function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
         <ThemeRegistry>
           <LanguageProvider initialLocale={defaultLocale} initialMessages={initialMessages}>
-            <LandingNavBar />
-            <div style={{ width: "100%", margin: "0 auto" }}>
-              {children}
-            </div>
-            <FloatingButton />
+            <ContactModalProvider>
+              <LandingNavBar />
+              <div style={{ width: "100%", margin: "0 auto" }}>
+                {children}
+              </div>
+              <FloatingButton />
+              <ContactModal />
+            </ContactModalProvider>
           </LanguageProvider>
         </ThemeRegistry>
       </body>

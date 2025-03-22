@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:production": "DISABLE_ESLINT_PLUGIN=true next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "DISABLE_ESLINT_PLUGIN=true next build",
+    "deploy": "npm run export && firebase deploy --only hosting"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",

@@ -4,6 +4,8 @@ import { Box, Container, Typography, Grid, Link, Stack, IconButton, Divider, use
 import Image from "next/image";
 import { config } from '../src/utils/config';
 import { useLanguage } from "../src/contexts/LanguageContext";
+import GetQuoteButton from "./GetQuoteButton";
+import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 
 export default function Footer() {
   const theme = useTheme();
@@ -42,6 +44,21 @@ export default function Footer() {
             >
               Professional drywall installation, repair, and painting services for residential and commercial properties.
             </Typography>
+            
+            <Box sx={{ mt: 3, textAlign: { xs: 'center', sm: 'left' } }}>
+              <GetQuoteButton
+                variant="contained"
+                startIcon={<RequestQuoteIcon />}
+                size="medium"
+                sx={{
+                  borderRadius: 1.5,
+                  px: 2,
+                  py: 1,
+                  textTransform: 'none',
+                  fontWeight: 'medium',
+                }}
+              />
+            </Box>
           </Grid>
 
           <Grid item xs={12} sm={6} md={4}>

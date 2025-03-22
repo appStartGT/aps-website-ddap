@@ -6,10 +6,8 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Menu,
   Container,
   Button,
-  MenuItem,
   Stack,
   Divider,
   CircularProgress,
@@ -23,16 +21,17 @@ import {
   alpha,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
-import PhoneIcon from '@mui/icons-material/Phone';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from "@mui/icons-material/Phone";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIcon from "@mui/icons-material/Email";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "../src/contexts/LanguageContext";
 import { Locale } from "../src/i18n";
-
+import GetQuoteButton from "./GetQuoteButton";
+import { config } from "../src/utils/config";
 const settings: Locale[] = ["en", "es"];
 
 // Navbar that hides when scrolling down and shows when scrolling up
@@ -117,7 +116,10 @@ const LandingNavBar = () => {
                     },
                   }}
                 >
-                  <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+                  <Link
+                    href="/"
+                    style={{ display: "flex", alignItems: "center" }}
+                  >
                     <Image
                       src="/img/png/logo_texto.png"
                       alt="Logo"
@@ -150,12 +152,12 @@ const LandingNavBar = () => {
                   }}
                   onClick={handlePhoneClick}
                 >
-                  <PhoneIcon 
-                    sx={{ 
-                      color: "#ff0000", 
-                      mr: 1, 
-                      fontSize: "1.2rem" 
-                    }} 
+                  <PhoneIcon
+                    sx={{
+                      color: "#ff0000",
+                      mr: 1,
+                      fontSize: "1.2rem",
+                    }}
                   />
                   <Typography
                     variant="body2"
@@ -165,7 +167,7 @@ const LandingNavBar = () => {
                       letterSpacing: "0.5px",
                     }}
                   >
-                    (123) 456-7890
+                    {config.contact.phone}
                   </Typography>
                 </Box>
 
@@ -215,12 +217,12 @@ const LandingNavBar = () => {
                   <IconButton
                     size="large"
                     onClick={handleDrawerToggle}
-                    sx={{ 
+                    sx={{
                       color: mobileOpen ? "transparent" : "black",
                       transition: "transform 0.3s, color 0.2s",
                       "&:hover": {
                         transform: "scale(1.1)",
-                        bgcolor: "transparent"
+                        bgcolor: "transparent",
                       },
                       zIndex: 1201,
                     }}
@@ -236,12 +238,9 @@ const LandingNavBar = () => {
                   alignItems="center"
                   sx={{ display: { xs: "none", md: "flex" } }}
                 >
-                  <Button
-                    variant="contained"
+                  <GetQuoteButton
                     startIcon={<RequestQuoteIcon />}
                     sx={{
-                      bgcolor: "#ff0000",
-                      color: "white",
                       py: 1,
                       px: 2,
                       textTransform: "none",
@@ -249,14 +248,11 @@ const LandingNavBar = () => {
                       transition: "all 0.3s",
                       boxShadow: "0 4px 8px rgba(255,0,0,0.2)",
                       "&:hover": {
-                        bgcolor: "#cc0000",
                         transform: "translateY(-2px)",
                         boxShadow: "0 6px 10px rgba(255,0,0,0.3)",
                       },
                     }}
-                  >
-                    {t("NavBar.getQuote")}
-                  </Button>
+                  />
 
                   <Divider orientation="vertical" flexItem sx={{ mx: 0.5 }} />
 
@@ -316,21 +312,21 @@ const LandingNavBar = () => {
         onOpen={handleDrawerToggle}
         ModalProps={{ keepMounted: true }}
         sx={{
-          display: { xs: 'block', md: 'none' },
-          '& .MuiDrawer-paper': {
-            boxSizing: 'border-box',
-            width: '100%',
-            bgcolor: 'rgba(255, 255, 255, 0.98)',
-            backdropFilter: 'blur(10px)',
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: "100%",
+            bgcolor: "rgba(255, 255, 255, 0.98)",
+            backdropFilter: "blur(10px)",
           },
         }}
       >
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100%',
-            position: 'relative',
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            position: "relative",
             p: 3,
           }}
         >
@@ -338,32 +334,32 @@ const LandingNavBar = () => {
           <IconButton
             onClick={handleDrawerToggle}
             sx={{
-              position: 'absolute',
+              position: "absolute",
               right: 16,
               top: 16,
-              color: '#ff0000',
-              bgcolor: alpha('#ff0000', 0.05),
-              '&:hover': {
-                bgcolor: alpha('#ff0000', 0.1),
-                transform: 'rotate(90deg)',
+              color: "#ff0000",
+              bgcolor: alpha("#ff0000", 0.05),
+              "&:hover": {
+                bgcolor: alpha("#ff0000", 0.1),
+                transform: "rotate(90deg)",
               },
-              transition: 'all 0.3s ease',
+              transition: "all 0.3s ease",
             }}
           >
             <CloseIcon />
           </IconButton>
 
           {/* Logo */}
-          <Box sx={{ my: 4, textAlign: 'center' }}>
+          <Box sx={{ my: 4, textAlign: "center" }}>
             <Image
               src="/img/png/logo_texto.png"
               alt="Logo"
               width={160}
               height={80}
               style={{
-                width: 'auto',
-                height: 'auto',
-                maxHeight: '80px',
+                width: "auto",
+                height: "auto",
+                maxHeight: "80px",
               }}
             />
           </Box>
@@ -396,13 +392,10 @@ const LandingNavBar = () => {
           </Typography>
 
           {/* Get Quote Button */}
-          <Button
-            variant="contained"
+          <GetQuoteButton
             startIcon={<RequestQuoteIcon />}
             fullWidth
             sx={{
-              bgcolor: "#ff0000",
-              color: "white",
               py: 1.5,
               mb: 3,
               textTransform: "none",
@@ -410,68 +403,65 @@ const LandingNavBar = () => {
               borderRadius: "6px",
               boxShadow: "0 4px 12px rgba(255,0,0,0.25)",
               "&:hover": {
-                bgcolor: "#cc0000",
                 boxShadow: "0 6px 15px rgba(255,0,0,0.35)",
               },
             }}
-          >
-            {t("NavBar.getQuote")}
-          </Button>
-          
+          />
+
           {/* Contact Information */}
           <List sx={{ mb: 3 }}>
-            <ListItem 
+            <ListItem
               onClick={handlePhoneClick}
-              sx={{ 
-                px: 2, 
+              sx={{
+                px: 2,
                 py: 1.5,
-                borderRadius: '8px',
+                borderRadius: "8px",
                 mb: 1,
-                bgcolor: alpha('#000', 0.02),
-                '&:hover': { bgcolor: alpha('#ff0000', 0.05) },
-                cursor: 'pointer',
+                bgcolor: alpha("#000", 0.02),
+                "&:hover": { bgcolor: alpha("#ff0000", 0.05) },
+                cursor: "pointer",
               }}
             >
               <PhoneIcon sx={{ color: "#ff0000", mr: 2 }} />
-              <ListItemText 
-                primary="(123) 456-7890" 
+              <ListItemText
+                primary={config.contact.phone}
                 primaryTypographyProps={{ fontWeight: 500 }}
               />
             </ListItem>
-            
-            <ListItem 
+
+            <ListItem
               onClick={handleWhatsAppClick}
-              sx={{ 
-                px: 2, 
+              sx={{
+                px: 2,
                 py: 1.5,
-                borderRadius: '8px',
+                borderRadius: "8px",
                 mb: 1,
-                bgcolor: alpha('#000', 0.02),
-                '&:hover': { bgcolor: alpha('#25D366', 0.1) },
-                cursor: 'pointer',
+                bgcolor: alpha("#000", 0.02),
+                "&:hover": { bgcolor: alpha("#25D366", 0.1) },
+                cursor: "pointer",
               }}
             >
               <WhatsAppIcon sx={{ color: "#25D366", mr: 2 }} />
-              <ListItemText 
-                primary="Chat on WhatsApp" 
+              <ListItemText
+                primary={config.contact.phone}
                 primaryTypographyProps={{ fontWeight: 500 }}
               />
             </ListItem>
-            
-            <ListItem 
+
+            <ListItem
               onClick={handleEmailClick}
-              sx={{ 
-                px: 2, 
+              sx={{
+                px: 2,
                 py: 1.5,
-                borderRadius: '8px',
-                bgcolor: alpha('#000', 0.02),
-                '&:hover': { bgcolor: alpha('#1976d2', 0.05) },
-                cursor: 'pointer',
+                borderRadius: "8px",
+                bgcolor: alpha("#000", 0.02),
+                "&:hover": { bgcolor: alpha("#1976d2", 0.05) },
+                cursor: "pointer",
               }}
             >
               <EmailIcon sx={{ color: "#1976d2", mr: 2 }} />
-              <ListItemText 
-                primary="info@example.com" 
+              <ListItemText
+                primary={config.contact.email}
                 primaryTypographyProps={{ fontWeight: 500 }}
               />
             </ListItem>
@@ -481,9 +471,9 @@ const LandingNavBar = () => {
           <Divider sx={{ mb: 3 }} />
 
           {/* Language Switcher */}
-          <Box sx={{ textAlign: 'center' }}>
+          <Box sx={{ textAlign: "center" }}>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              {locale === 'en' ? 'Select language' : 'Seleccionar idioma'}
+              {locale === "en" ? "Select language" : "Seleccionar idioma"}
             </Typography>
             <Stack
               direction="row"
@@ -498,15 +488,20 @@ const LandingNavBar = () => {
                   disabled={isLoading}
                   sx={{
                     color: locale === setting ? "#fff" : "rgba(0,0,0,0.7)",
-                    bgcolor: locale === setting ? "#ff0000" : "rgba(0,0,0,0.05)",
+                    bgcolor:
+                      locale === setting ? "#ff0000" : "rgba(0,0,0,0.05)",
                     px: 3,
                     py: 1,
                     borderRadius: "6px",
                     transition: "all 0.3s",
                     "&:hover": {
-                      bgcolor: locale === setting ? "#cc0000" : "rgba(0,0,0,0.09)",
+                      bgcolor:
+                        locale === setting ? "#cc0000" : "rgba(0,0,0,0.09)",
                     },
-                    boxShadow: locale === setting ? "0 4px 8px rgba(255,0,0,0.2)" : "none",
+                    boxShadow:
+                      locale === setting
+                        ? "0 4px 8px rgba(255,0,0,0.2)"
+                        : "none",
                   }}
                   startIcon={
                     isLoading && locale !== setting ? (
@@ -528,11 +523,11 @@ const LandingNavBar = () => {
               ))}
             </Stack>
           </Box>
-          
+
           {/* Footer */}
-          <Box sx={{ mt: 'auto', pt: 3, textAlign: 'center' }}>
+          <Box sx={{ mt: "auto", pt: 3, textAlign: "center" }}>
             <Typography variant="body2" color="text.secondary">
-              © {new Date().getFullYear()} Dany's Drywall & Painting
+              © {new Date().getFullYear()} Dany&apos;s Drywall & Painting
             </Typography>
           </Box>
         </Box>
@@ -544,4 +539,4 @@ const LandingNavBar = () => {
   );
 };
 
-export default LandingNavBar; 
+export default LandingNavBar;

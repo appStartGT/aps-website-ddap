@@ -2,6 +2,8 @@
 
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, useTheme, useMediaQuery } from "@mui/material";
 import { useLanguage } from "../src/contexts/LanguageContext";
+import GetQuoteButton from "./GetQuoteButton";
+import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 
 export default function ServicesSection() {
   const theme = useTheme();
@@ -107,6 +109,25 @@ export default function ServicesSection() {
             </Grid>
           ))}
         </Grid>
+        
+        <Box sx={{ mt: 6, display: 'flex', justifyContent: 'center' }}>
+          <GetQuoteButton 
+            variant="contained"
+            startIcon={<RequestQuoteIcon />}
+            size={isMobile ? "medium" : "large"}
+            sx={{
+              py: 1.5,
+              px: 3,
+              borderRadius: 2,
+              boxShadow: '0 4px 12px rgba(255, 0, 0, 0.2)',
+              '&:hover': {
+                boxShadow: '0 6px 15px rgba(255, 0, 0, 0.3)',
+                transform: 'translateY(-3px)'
+              },
+              transition: 'all 0.3s ease'
+            }}
+          />
+        </Box>
       </Container>
     </Box>
   );

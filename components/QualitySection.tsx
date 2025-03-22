@@ -1,13 +1,23 @@
-'use client';
+"use client";
 
-import { Box, Container, Typography, Grid, useTheme, useMediaQuery, Paper } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  useTheme,
+  useMediaQuery,
+  Paper,
+} from "@mui/material";
 import { useLanguage } from "../src/contexts/LanguageContext";
+import GetQuoteButton from "./GetQuoteButton";
+import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 
 export default function QualitySection() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { t } = useLanguage();
-  
+
   return (
     <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "#f9f9f9" }}>
       <Container maxWidth="lg">
@@ -15,10 +25,10 @@ export default function QualitySection() {
           variant={isMobile ? "h4" : "h3"}
           component="h2"
           align="center"
-          sx={{ 
-            mb: { xs: 4, md: 6 }, 
+          sx={{
+            mb: { xs: 4, md: 6 },
             fontWeight: "bold",
-            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' }
+            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
           }}
         >
           <Typography
@@ -29,39 +39,52 @@ export default function QualitySection() {
               fontWeight: "bold",
             }}
           >
-            {t('Quality.unmatched')}
+            {t("Quality.unmatched")}
           </Typography>{" "}
-          {t('Quality.quality')}
+          {t("Quality.quality")}
         </Typography>
 
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} sm={10} md={8}>
             <Paper elevation={2} sx={{ p: { xs: 3, md: 4 }, borderRadius: 2 }}>
-              <Typography 
-                variant="body1" 
+              <Typography
+                variant="body1"
                 paragraph
-                sx={{ 
-                  fontSize: { xs: '0.95rem', md: '1.1rem' },
-                  textAlign: { xs: 'left', md: 'center' }
+                sx={{
+                  fontSize: { xs: "0.95rem", md: "1.1rem" },
+                  textAlign: { xs: "left", md: "center" },
                 }}
               >
-                {t('Quality.paragraph1')}
+                {t("Quality.paragraph1")}
               </Typography>
-              <Typography 
-                variant="body1" 
+              <Typography
+                variant="body1"
                 paragraph
-                sx={{ 
-                  fontSize: { xs: '0.95rem', md: '1.1rem' },
-                  textAlign: { xs: 'left', md: 'center' },
-                  mb: 0
+                sx={{
+                  fontSize: { xs: "0.95rem", md: "1.1rem" },
+                  textAlign: { xs: "left", md: "center" },
+                  mb: 0,
                 }}
               >
-                {t('Quality.paragraph2')}
+                {t("Quality.paragraph2")}
               </Typography>
             </Paper>
+
+            <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
+              <GetQuoteButton
+                variant="contained"
+                startIcon={<RequestQuoteIcon />}
+                size={isMobile ? "medium" : "large"}
+                sx={{
+                  py: 1.5,
+                  px: 3,
+                  borderRadius: 2,
+                }}
+              />
+            </Box>
           </Grid>
         </Grid>
       </Container>
     </Box>
   );
-} 
+}
