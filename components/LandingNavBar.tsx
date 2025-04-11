@@ -212,8 +212,52 @@ const LandingNavBar = () => {
                     flexGrow: 1,
                     display: { xs: "flex", md: "none" },
                     justifyContent: "flex-end",
+                    alignItems: "center",
                   }}
                 >
+                  {/* Mobile Language Toggle */}
+                  <IconButton
+                    onClick={() => {
+                      const newLocale = locale === "en" ? "es" : "en";
+                      handleChangeLanguage(newLocale);
+                    }}
+                    sx={{
+                      color: "black",
+                      mr: 1,
+                      position: "relative",
+                      border: "1px solid rgba(0,0,0,0.1)",
+                      p: 0.75,
+                      "&:hover": {
+                        bgcolor: "rgba(0,0,0,0.04)",
+                      },
+                    }}
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <CircularProgress size={20} color="inherit" />
+                    ) : (
+                      <Box
+                        sx={{
+                          position: "relative",
+                          width: 20,
+                          height: 20,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Image
+                          src={`/img/icons/${
+                            locale === "en" ? "US-EN.png" : "ES-SP.png"
+                          }`}
+                          alt={locale}
+                          width={20}
+                          height={20}
+                          style={{ borderRadius: "50%" }}
+                        />
+                      </Box>
+                    )}
+                  </IconButton>
                   <IconButton
                     size="large"
                     onClick={handleDrawerToggle}
