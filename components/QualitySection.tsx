@@ -19,7 +19,13 @@ export default function QualitySection() {
   const { t } = useLanguage();
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "#f9f9f9" }}>
+    <Box
+      id="about-section"
+      sx={{
+        py: { xs: 6, md: 8 },
+        bgcolor: "#f9f9f9",
+      }}
+    >
       <Container maxWidth="lg">
         <Typography
           variant={isMobile ? "h4" : "h3"}

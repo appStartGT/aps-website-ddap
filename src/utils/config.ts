@@ -23,5 +23,25 @@ export const config = {
   },
   company: {
     name: process.env.NEXT_PUBLIC_COMPANY_NAME || "Dany's Drywall and Painting",
+    description: process.env.NEXT_PUBLIC_COMPANY_DESCRIPTION || 
+      "Professional drywall installation, repair, and painting services for residential and commercial properties.",
+    founded: process.env.NEXT_PUBLIC_COMPANY_FOUNDED || "2010",
+    services: [
+      "Drywall Installation",
+      "Drywall Repair",
+      "Texture Application",
+      "Painting Services",
+      "Commercial Painting",
+      "Residential Painting"
+    ],
+    location: {
+      city: process.env.NEXT_PUBLIC_COMPANY_CITY || "Anytown",
+      state: process.env.NEXT_PUBLIC_COMPANY_STATE || "CA",
+      country: process.env.NEXT_PUBLIC_COMPANY_COUNTRY || "US",
+      coordinates: {
+        latitude: process.env.NEXT_PUBLIC_COMPANY_LAT || "37.7749",
+        longitude: process.env.NEXT_PUBLIC_COMPANY_LONG || "-122.4194",
+      }
+    }
   },
 };

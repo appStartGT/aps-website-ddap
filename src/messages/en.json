@@ -5,6 +5,8 @@
     "services": "Services",
     "projects": "Projects",
     "blog": "Blog",
+    "workInProgress": "Behind The Scenes",
+    "gallery": "Gallery",
     "contact": "Contact",
     "getQuote": "Get a Quote",
     "getFreeQuote": "Get a Free Quote",
@@ -71,5 +73,48 @@
     "quickLinks": "Quick Links",
     "contactInfo": "Contact Info",
     "rights": "All Rights Reserved"
+  },
+  "Process": {
+    "subtitle": "How We Work",
+    "title": "Our Process",
+    "steps": {
+      "1": {
+        "title": "Consultation",
+        "description": "We start with a detailed consultation to understand your needs and vision for the project."
+      },
+      "2": {
+        "title": "Planning",
+        "description": "Our experts create a comprehensive plan, including timeline, materials, and cost estimates."
+      },
+      "3": {
+        "title": "Preparation",
+        "description": "We properly prepare the space, protecting your furniture and belongings before work begins."
+      },
+      "4": {
+        "title": "Installation",
+        "description": "Our skilled professionals execute the drywall installation with precision and attention to detail."
+      },
+      "5": {
+        "title": "Finishing",
+        "description": "We meticulously finish the surfaces, ensuring a smooth, flawless result ready for painting."
+      },
+      "6": {
+        "title": "Final Inspection",
+        "description": "A thorough inspection ensures everything meets our high-quality standards and your expectations."
+      }
+    }
+  },
+  "BehindTheScenes": {
+    "subtitle": "Craftsmanship",
+    "title": "Behind The Scenes",
+    "description": "Get a glimpse into our craftsmen at work. Our skilled team brings years of experience and dedication to every project, ensuring quality results from start to finish."
+  },
+  "WorkInProgress": {
+    "scene1Alt": "Securely fastening the drywall to the wall",
+    "scene2Alt": "Taping the joints of the drywall",
+    "scene3Alt": "Applying joint compound to the drywall",
+    "scene4Alt": "Sanding the drywall surface",
+    "scene5Alt": "Applying primer to the drywall",
+    "scene6Alt": "Applying paint to the drywall"
   }
-} 
+}

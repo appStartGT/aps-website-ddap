@@ -72,12 +72,12 @@ const NavBar = () => {
                 <Image
                   src="/img/png/logo_texto.png"
                   alt="Logo"
-                  width={120}
-                  height={60}
+                  width={100}
+                  height={100}
                   style={{
                     width: "auto",
                     height: "auto",
-                    maxHeight: "60px",
+                    maxHeight: "150px",
                   }}
                   priority
                 />

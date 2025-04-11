@@ -70,17 +70,17 @@ const LandingNavBar = () => {
 
   // Function to handle phone number click
   const handlePhoneClick = () => {
-    window.location.href = "tel:1234567890";
+    window.location.href = `tel:${config.contact.phone}`;
   };
 
   // Function to handle email click
   const handleEmailClick = () => {
-    window.location.href = "mailto:info@example.com";
+    window.location.href = `mailto:${config.contact.email}`;
   };
 
   // Function to handle WhatsApp click
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/1234567890", "_blank");
+    window.open(`whatsapp://send?phone=${config.contact.phone}`, "_blank");
   };
 
   // If not mounted yet, return a simple placeholder to avoid hydration issues
@@ -123,12 +123,12 @@ const LandingNavBar = () => {
                     <Image
                       src="/img/png/logo_texto.png"
                       alt="Logo"
-                      width={120}
-                      height={60}
+                      width={100}
+                      height={100}
                       style={{
                         width: "auto",
                         height: "auto",
-                        maxHeight: "60px",
+                        maxHeight: "150px",
                       }}
                       priority
                     />
@@ -354,13 +354,14 @@ const LandingNavBar = () => {
             <Image
               src="/img/png/logo_texto.png"
               alt="Logo"
-              width={160}
-              height={80}
+              width={100}
+              height={100}
               style={{
                 width: "auto",
                 height: "auto",
-                maxHeight: "80px",
+                maxHeight: "150px",
               }}
+              priority
             />
           </Box>
 

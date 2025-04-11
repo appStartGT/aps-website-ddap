@@ -5,6 +5,8 @@
     "services": "Servicios",
     "projects": "Proyectos",
     "blog": "Blog",
+    "workInProgress": "Detrás de Escena",
+    "gallery": "Galería",
     "contact": "Contacto",
     "getQuote": "Obtener Presupuesto",
     "getFreeQuote": "Cotización Gratis",
@@ -71,5 +73,48 @@
     "quickLinks": "Enlaces Rápidos",
     "contactInfo": "Información de Contacto",
     "rights": "Todos los Derechos Reservados"
+  },
+  "Process": {
+    "subtitle": "Cómo Trabajamos",
+    "title": "Nuestro Proceso",
+    "steps": {
+      "1": {
+        "title": "Consulta",
+        "description": "Comenzamos con una consulta detallada para comprender sus necesidades y visión para el proyecto."
+      },
+      "2": {
+        "title": "Planificación",
+        "description": "Nuestros expertos crean un plan integral, que incluye cronograma, materiales y estimaciones de costos."
+      },
+      "3": {
+        "title": "Preparación",
+        "description": "Preparamos adecuadamente el espacio, protegiendo sus muebles y pertenencias antes de comenzar el trabajo."
+      },
+      "4": {
+        "title": "Instalación",
+        "description": "Nuestros profesionales ejecutan la instalación del drywall con precisión y atención al detalle."
+      },
+      "5": {
+        "title": "Acabado",
+        "description": "Terminamos meticulosamente las superficies, asegurando un resultado suave e impecable listo para pintar."
+      },
+      "6": {
+        "title": "Inspección Final",
+        "description": "Una inspección minuciosa garantiza que todo cumpla con nuestros altos estándares de calidad y sus expectativas."
+      }
+    }
+  },
+  "BehindTheScenes": {
+    "subtitle": "Artesanía",
+    "title": "Detrás de Escena",
+    "description": "Observe a nuestros artesanos en acción. Nuestro equipo experto aporta años de experiencia y dedicación a cada proyecto, garantizando resultados de calidad de principio a fin."
+  },
+  "WorkInProgress": {
+    "scene1Alt": "Fijación segura del panel de yeso a la pared",
+    "scene2Alt": "Aplicación de cinta en las juntas del panel de yeso",
+    "scene3Alt": "Aplicación de compuesto para juntas en el panel de yeso",
+    "scene4Alt": "Lijado de la superficie del panel de yeso",
+    "scene5Alt": "Aplicación de imprimación al panel de yeso",
+    "scene6Alt": "Aplicación de pintura al panel de yeso"
   }
-} 
+}

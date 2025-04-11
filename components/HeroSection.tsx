@@ -30,7 +30,7 @@ export default function HeroSection() {
 
   return (
     <Box
-      id="hero"
+      id="hero-section"
       sx={{
         width: "100%",
         minHeight: { xs: "80vh", md: "100vh" },

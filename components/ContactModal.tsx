@@ -22,8 +22,11 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 import { useContactModal } from "../src/contexts/ContactModalContext";
 import { useLanguage } from "../src/contexts/LanguageContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { config } from "../src/utils/config";
+import { useFirebase } from "../src/hooks/useFirebase";
+import { useAnalyticsContext } from "../src/contexts/AnalyticsContext";
+import { AnalyticsEvents } from "../src/hooks/useAnalytics";
 
 interface FormData {
   firstName: string;
@@ -37,7 +40,9 @@ export default function ContactModal() {
   const { isOpen, closeModal } = useContactModal();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const firebase = useFirebase();
+  const analytics = useAnalyticsContext();
 
   // Format phone number for WhatsApp URL (remove any non-numeric characters)
   const whatsappNumber = config.contact.phone.replace(/\D/g, "");
@@ -108,35 +113,60 @@ export default function ContactModal() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) return;
+    if (!validateForm()) {
+      // Track form validation errors
+      analytics.trackEvent(AnalyticsEvents.CONTACT_FORM_ERROR, {
+        errors: Object.keys(errors),
+        language: locale
+      });
+      return;
+    }
 
     setIsSubmitting(true);
 
     try {
-      // Here you would send the form data to your backend API
-      // For now, we'll just simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Use the firebase hook to add the contact request
+      const result = await firebase.addContactRequest(formData);
+      
+      if (result.success) {
+        // Track successful form submission
+        analytics.trackEvent(AnalyticsEvents.CONTACT_FORM_SUBMIT, {
+          hasPhone: Boolean(formData.phone),
+          language: locale,
+          formSource: 'modal'
+        });
 
-      setSnackbar({
-        open: true,
-        message: "Your message has been sent successfully!",
-        severity: "success",
+        setSnackbar({
+          open: true,
+          message: "Your message has been sent successfully!",
+          severity: "success",
+        });
+
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+
+        // Close modal after a delay
+        setTimeout(() => {
+          closeModal();
+        }, 2000);
+      } else {
+        throw result.error;
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      
+      // Track form submission error
+      analytics.trackEvent(AnalyticsEvents.CONTACT_FORM_ERROR, {
+        error: error instanceof Error ? error.message : 'Unknown error',
+        language: locale
       });
-
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-
-      // Close modal after a delay
-      setTimeout(() => {
-        closeModal();
-      }, 2000);
-    } catch {
+      
       setSnackbar({
         open: true,
         message: "There was an error sending your message. Please try again.",
@@ -153,6 +183,39 @@ export default function ContactModal() {
       open: false,
     }));
   };
+
+  // Track contact button clicks
+  const handleContactClick = (method: string) => {
+    switch(method) {
+      case 'phone':
+        analytics.trackEvent(AnalyticsEvents.CONTACT_PHONE_CALL, {
+          source: 'contact_modal',
+          language: locale
+        });
+        break;
+      case 'whatsapp':
+        analytics.trackEvent(AnalyticsEvents.CONTACT_WHATSAPP_CLICK, {
+          source: 'contact_modal', 
+          language: locale
+        });
+        break;
+      case 'email':
+        analytics.trackEvent(AnalyticsEvents.CONTACT_EMAIL_CLICK, {
+          source: 'contact_modal',
+          language: locale
+        });
+        break;
+    }
+  };
+
+  // Track modal open/close
+  useEffect(() => {
+    if (isOpen) {
+      analytics.trackEvent('contact_modal_open', {
+        language: locale
+      });
+    }
+  }, [isOpen, analytics, locale]);
 
   return (
     <>
@@ -229,6 +292,7 @@ export default function ContactModal() {
                 variant="outlined"
                 startIcon={<PhoneIcon />}
                 href={`tel:${config.contact.phone}`}
+                onClick={() => handleContactClick('phone')}
                 sx={{
                   borderColor: theme.palette.primary.main,
                   color: theme.palette.primary.main,
@@ -244,6 +308,7 @@ export default function ContactModal() {
                 variant="outlined"
                 startIcon={<WhatsAppIcon />}
                 href={`whatsapp://send?phone=${whatsappNumber}`}
+                onClick={() => handleContactClick('whatsapp')}
                 sx={{
                   borderColor: "#25D366",
                   color: "#25D366",
@@ -259,6 +324,7 @@ export default function ContactModal() {
                 variant="outlined"
                 startIcon={<EmailIcon />}
                 href={`mailto:${config.contact.email}`}
+                onClick={() => handleContactClick('email')}
                 sx={{
                   borderColor: theme.palette.primary.main,
                   color: theme.palette.primary.main,

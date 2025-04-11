@@ -12,48 +12,49 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
 import { useLanguage } from "../src/contexts/LanguageContext";
+import Image from "next/image";
 
 // Define gallery items - replace with actual project photos
 const galleryItems = [
   {
     id: 1,
-    src: "/img/projects/placeholder1.jpg",
-    thumbnail: "/img/projects/placeholder1.jpg",
+    src: "/img/png/gallery/placeholder1.png",
+    thumbnail: "/img/png/gallery/placeholder1.png",
     title: "Residential Painting",
     description: "Interior painting for a modern home",
   },
   {
     id: 2,
-    src: "/img/projects/placeholder2.jpg",
-    thumbnail: "/img/projects/placeholder2.jpg",
+    src: "/img/png/gallery/placeholder2.png",
+    thumbnail: "/img/png/gallery/placeholder2.png",
     title: "Commercial Drywall",
     description: "Drywall installation for an office space",
   },
   {
     id: 3,
-    src: "/img/projects/placeholder3.jpg",
-    thumbnail: "/img/projects/placeholder3.jpg",
+    src: "/img/png/gallery/placeholder3.png",
+    thumbnail: "/img/png/gallery/placeholder3.png",
     title: "Residential Renovation",
     description: "Complete drywall and painting renovation",
   },
   {
     id: 4,
-    src: "/img/projects/placeholder4.jpg",
-    thumbnail: "/img/projects/placeholder4.jpg",
+    src: "/img/png/gallery/placeholder4.png",
+    thumbnail: "/img/png/gallery/placeholder4.png",
     title: "Kitchen Remodel",
     description: "Drywall and painting for a kitchen remodel",
   },
   {
     id: 5,
-    src: "/img/projects/placeholder5.jpg",
-    thumbnail: "/img/projects/placeholder5.jpg",
+    src: "/img/png/gallery/placeholder5.png",
+    thumbnail: "/img/png/gallery/placeholder5.png",
     title: "Office Space",
     description: "Commercial painting project",
   },
   {
     id: 6,
-    src: "/img/projects/placeholder6.jpg",
-    thumbnail: "/img/projects/placeholder6.jpg",
+    src: "/img/png/gallery/placeholder6.png",
+    thumbnail: "/img/png/gallery/placeholder6.png",
     title: "Ceiling Repair",
     description: "Drywall repair and painting for damaged ceiling",
   },
@@ -86,7 +87,13 @@ export default function GallerySection() {
   };
 
   return (
-    <Box sx={{ py: 8, bgcolor: "#f5f5f5" }}>
+    <Box
+      id="gallery-section"
+      sx={{
+        py: 8,
+        bgcolor: "#f5f5f5",
+      }}
+    >
       <Container maxWidth="lg">
         <Typography
           variant="h3"
@@ -122,23 +129,12 @@ export default function GallerySection() {
                 }}
                 onClick={() => handleOpen(index)}
               >
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    bgcolor: "grey.300",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Typography variant="body2" color="text.secondary">
-                    Photo {index + 1}
-                  </Typography>
-                </Box>
+                <Image
+                  src={item.thumbnail}
+                  alt={item.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
                 <Box
                   sx={{
                     position: "absolute",
@@ -216,19 +212,20 @@ export default function GallerySection() {
             >
               <Box
                 sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
+                  position: "relative",
+                  width: "100%",
+                  height: "100%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <Typography variant="body2" color="white">
-                  {galleryItems[currentImage].title}
-                </Typography>
+                <Image
+                  src={galleryItems[currentImage].src}
+                  alt={galleryItems[currentImage].title}
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
               </Box>
 
               <IconButton
@@ -241,6 +238,7 @@ export default function GallerySection() {
                   "&:hover": {
                     bgcolor: "rgba(0,0,0,0.7)",
                   },
+                  zIndex: 1,
                 }}
               >
                 <ArrowBackIosNewIcon />
@@ -256,6 +254,7 @@ export default function GallerySection() {
                   "&:hover": {
                     bgcolor: "rgba(0,0,0,0.7)",
                   },
+                  zIndex: 1,
                 }}
               >
                 <ArrowForwardIosIcon />
@@ -268,6 +267,9 @@ export default function GallerySection() {
                   left: 0,
                   right: 0,
                   textAlign: "center",
+                  zIndex: 1,
+                  bgcolor: "rgba(0,0,0,0.5)",
+                  py: 1,
                 }}
               >
                 <Typography
