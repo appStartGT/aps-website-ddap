@@ -40,32 +40,32 @@ export default function WorkInProgressSection() {
   const galleryItems = [
     {
       id: 1,
-      src: "/img/jpeg/behind_scene/scene1.jpeg",
+      src: "/img/webp/behind_scene/scene1.webp",
       alt: t("WorkInProgress.scene1Alt"),
     },
     {
       id: 2,
-      src: "/img/jpeg/behind_scene/scene2.jpeg",
+      src: "/img/webp/behind_scene/scene2.webp",
       alt: t("WorkInProgress.scene2Alt"),
     },
     {
       id: 3,
-      src: "/img/jpeg/behind_scene/scene3.jpeg",
+      src: "/img/webp/behind_scene/scene3.webp",
       alt: t("WorkInProgress.scene3Alt"),
     },
     {
       id: 4,
-      src: "/img/jpeg/behind_scene/scene4.jpeg",
+      src: "/img/webp/behind_scene/scene4.webp",
       alt: t("WorkInProgress.scene4Alt"),
     },
     {
       id: 5,
-      src: "/img/jpeg/behind_scene/scene5.jpeg",
+      src: "/img/webp/behind_scene/scene5.webp",
       alt: t("WorkInProgress.scene5Alt"),
     },
     {
       id: 6,
-      src: "/img/jpeg/behind_scene/scene6.jpeg",
+      src: "/img/webp/behind_scene/scene6.webp",
       alt: t("WorkInProgress.scene6Alt"),
     },
   ];

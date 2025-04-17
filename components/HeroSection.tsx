@@ -51,7 +51,7 @@ export default function HeroSection() {
         }}
       >
         <Image
-          src="/img/svg/hero_background.svg"
+          src="/img/webp/banner/hero_background.webp"
           alt="Hero Background"
           fill
           style={{ objectFit: "cover" }}

@@ -24,15 +24,15 @@ export default function ServicesSection() {
   const services = [
     {
       key: "service1",
-      image: "/img/png/services/drywall.png", // You'll need to add actual images
+      image: "/img/webp/services/drywall.webp", // You'll need to add actual images
     },
     {
       key: "service2",
-      image: "/img/png/services/painting.png", // You'll need to add actual images
+      image: "/img/webp/services/painting.webp", // You'll need to add actual images
     },
     {
       key: "service3",
-      image: "/img/png/services/repair.png", // You'll need to add actual images
+      image: "/img/webp/services/repair.webp", // You'll need to add actual images
     },
   ];
 

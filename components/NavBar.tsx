@@ -70,7 +70,7 @@ const NavBar = () => {
             <Box sx={{ display: "flex", mr: { xs: 1, md: 3 } }}>
               <Link href="/" style={{ display: "flex", alignItems: "center" }}>
                 <Image
-                  src="/img/png/logo_texto.png"
+                  src="/img/webp/logo_texto.webp"
                   alt="Logo"
                   width={100}
                   height={100}

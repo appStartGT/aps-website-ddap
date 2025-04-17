@@ -17,18 +17,18 @@ const projects = [
     title: "Modern Home Renovation",
     description:
       "Complete drywall installation and painting in a modern home renovation.",
-    image: "/img/png/projects/project1.png", // Placeholder, will need actual images
+    image: "/img/webp/projects/project1.webp", // Placeholder, will need actual images
   },
   {
     title: "Commercial Office Space",
     description:
       "Professional painting services for a commercial office building.",
-    image: "/img/png/projects/project2.png", // Placeholder, will need actual images
+    image: "/img/webp/projects/project2.webp", // Placeholder, will need actual images
   },
   {
     title: "Residential Drywall Repair",
     description: "Extensive drywall repair and repainting after water damage.",
-    image: "/img/png/projects/project3.png", // Placeholder, will need actual images
+    image: "/img/webp/projects/project3.webp", // Placeholder, will need actual images
   },
 ];
 
